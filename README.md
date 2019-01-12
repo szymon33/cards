@@ -9,6 +9,7 @@ Technology stack:
 * Babel
 * Webpack
 * ESLint
+* pure.css (not Bootstrap this time)
 
 
 ## Description
