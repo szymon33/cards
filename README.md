@@ -1,8 +1,6 @@
-# Simple React Cards application
+# Simple React Deck of Cards application
 
 ## Introduction
-
-This is a a simple React front-end application. 
 
 Technology stack:
 
@@ -10,6 +8,7 @@ Technology stack:
 * Jest
 * Babel
 * Webpack
+* ESLint
 
 
 ## Description
