@@ -25,17 +25,17 @@ describe('Game', () => {
     });
 
     it('has 2nd of club as first', () => {
-      expect(deck[0]).toBe('2C');
+      expect(deck[0]).toBe('C2');
     });
 
     it('has Ace of dimond as last', () => {
-      expect(deck[51]).toBe('AD');
+      expect(deck[51]).toBe('DA');
     });
   });
 
   describe('takeOneCard', () => {
     it('returns last card', () => {
-      expect(game.takeOneCard()).toEqual('AD');
+      expect(game.takeOneCard()).toEqual('DA');
     });
 
     it('decreases the deck', () => {
@@ -64,7 +64,7 @@ describe('Game', () => {
   describe('giveCardBack', () => {
     it('returns last card', () => {
       game.takeOneCard();
-      expect(game.giveCardBack()).toEqual('AD');
+      expect(game.giveCardBack()).toEqual('DA');
     });
 
     it('increases the deck', () => {

@@ -44,8 +44,8 @@ class Game {
   }
 
   sortTable() {
-    let tableDup = Array.from(this.orderedDeck);
-    if (this.table.length === 0) return this.table;
+    let tableDup = Array.from(this.table);
+    if (tableDup.length === 0) return this.table;
 
     tableDup.sort( (a, b) => {  
       return this.orderedDeck.indexOf(a) - this.orderedDeck.indexOf(b);
@@ -61,9 +61,9 @@ class Game {
         ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
         suits = ['C', 'S', 'H', 'D']; // clubs, spades, hearts, diamonds
 
-    ranks.forEach(function(rank) {
-      suits.forEach(function(suit){
-        result.push(rank.concat(suit));       
+    suits.forEach(function(suit) {
+      ranks.forEach(function(rank){
+        result.push(suit.concat(rank));       
       });
     });
     return result;
