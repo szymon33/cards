@@ -2,28 +2,33 @@ import React, { Component } from 'react';
 import Game from './Game';
 import logo from './logo.svg';
 import './App.css';
-import Menu from './Menu'
+import Menu from './Menu';
+import Deck from './Deck';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.game = new Game();
+    this.state = { game: new Game() };
   }
 
   takeOneCard() {
-    this.game.takeOneCard();
+    this.state.game.takeOneCard();
+    this.setState({ game: this.state.game });
   }
 
   shuffle() {
-    this.game.shuffle();
+    this.state.game.shuffle();
+    this.setState({ game: this.state.game });
   }
 
   startOver() {
-    this.game.startOver();
+    this.state.game.startOver();
+    this.setState({ game: this.state.game });
   }
 
   sortTable() {
-    this.game.sortTable();
+    this.state.game.sortTable();
+    this.setState({ game: this.state.game });
   }
 
   render() {
@@ -41,6 +46,7 @@ class App extends Component {
             startOver={ this.startOver.bind(this) }
             sortTable={ this.sortTable.bind(this) }
           />
+          <Deck noOfCards={ this.state.game.deck.length } />
         </div>
       </div>
     );
