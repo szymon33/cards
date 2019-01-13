@@ -1,3 +1,9 @@
+/* App */
+
+h1 {
+  text-align: center;
+}
+
 /* menu compoemnt */
 
 .menu button {
@@ -25,33 +31,41 @@
 /* deck compoment */
 
 aside.deck {
-  height: 3em;
+  height: 2em;
 
   background: #1f8dd6;
-  margin: 1em 0;
-  padding: 0.3em 1em;
+  margin: 0.5em 0;
+  line-height: 2em;
+  padding-left: 1em;
   border-radius: 3px;
   color: #fff;
 }
 
 .card {
-  color: white;
   text-align: center;
   height: 6em;
   margin: 0.25em;
   padding-top: 0.5em;
-  font-size: 2em;
+  font-size: 3em;
+  border: 3px solid darkgray;
+  border-radius: 0.5em;
 }
 
 .card:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: .6;
 }
 
 .card.red {
-  background: red;
+  color: red;
 }
 
 .card.black {
-  background: black;
+  color: black;
+}
+
+/* UserTable component */
+
+.no-cards-msg {
+  padding-left: 1em;
 }
