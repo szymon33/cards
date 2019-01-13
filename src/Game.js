@@ -34,12 +34,14 @@ class Game {
       this.deck[ctr] = this.deck[randomIdx];
       this.deck[randomIdx] = temp;
     }
+    this.deckIsOrdered = false;
     return this.deck;
   }
 
   startOver() {
     this.table = [];
     this.deck = Array.from(this.orderedDeck);
+    this.deckIsOrdered = true;
     return this;
   }
 

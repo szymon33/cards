@@ -47,7 +47,10 @@ class App extends Component {
             startOver={ this.startOver.bind(this) }
             sortTable={ this.sortTable.bind(this) }
           />
-          <Deck noOfCards={ this.state.game.deck.length } />
+          <Deck
+            noOfCards={this.state.game.deck.length }
+            deckIsOrdered={this.state.game.deckIsOrdered }
+          />
           <UserTable cards={ this.state.game.table } />
         </div>
       </div>

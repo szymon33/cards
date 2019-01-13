@@ -130,4 +130,10 @@ describe('Game', () => {
     expect(table.length).toEqual(3);
     expect(table).not.toEqual(game.table);
   });
+
+  it('deckIsOrdered', () => {
+    expect(game.deckIsOrdered).toBeTruthy;
+    game.shuffle();
+    expect(game.deckIsOrdered).toBeFalsey;
+  });
 });
