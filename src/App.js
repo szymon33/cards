@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Menu from './Menu';
 import Deck from './Deck';
+import UserTable from './UserTable';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class App extends Component {
             sortTable={ this.sortTable.bind(this) }
           />
           <Deck noOfCards={ this.state.game.deck.length } />
+          <UserTable cards={ this.state.game.table } />
         </div>
       </div>
     );
