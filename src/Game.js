@@ -12,11 +12,15 @@ class Game {
     return card;
   }
 
-  giveCardBack() {
+  giveCardBack(card) {
     if (this.table.length === 0) return null;
 
-    let card = this.table.pop(1);
-    this.deck.push(card);
+    let index = this.table.indexOf(card);
+    if (index > -1) {
+      this.table.splice(index, 1);
+      this.deck.push(card);
+    }
+
     return card;
   }
 

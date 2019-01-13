@@ -32,6 +32,11 @@ class App extends Component {
     this.setState({ game: this.state.game });
   }
 
+  giveCardBack(card) {
+    this.state.game.giveCardBack(card);
+    this.setState({ game: this.state.game });
+  }
+
   render() {
     return (
       <div className='App'>
@@ -51,7 +56,10 @@ class App extends Component {
             noOfCards={this.state.game.deck.length }
             deckIsOrdered={this.state.game.deckIsOrdered }
           />
-          <UserTable cards={ this.state.game.table } />
+          <UserTable
+            cards={ this.state.game.table }
+            giveCardBack={ this.giveCardBack.bind(this) }
+          />
         </div>
       </div>
     );

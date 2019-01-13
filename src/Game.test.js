@@ -63,21 +63,21 @@ describe('Game', () => {
 
   describe('giveCardBack', () => {
     it('returns last card', () => {
-      game.takeOneCard();
-      expect(game.giveCardBack()).toEqual('DA');
+      let card = game.takeOneCard();
+      expect(game.giveCardBack(card)).toEqual('DA');
     });
 
     it('increases the deck', () => {
-      game.takeOneCard();
-      let deckInitialSize = game.deck.length;
-      game.giveCardBack();
+      let card = game.takeOneCard(),
+          deckInitialSize = game.deck.length;
+      game.giveCardBack(card);
       expect(game.deck.length).toEqual(deckInitialSize + 1);
     });
 
     it('decreases the table', () => {
-      game.takeOneCard();
-      let tableInitialSize = game.table.length;
-      game.giveCardBack();
+      let card = game.takeOneCard(),
+          tableInitialSize = game.table.length;
+      game.giveCardBack(card);
       expect(game.table.length).toEqual(tableInitialSize - 1);
     });
 
@@ -86,7 +86,7 @@ describe('Game', () => {
 
       expect(game.table).toContain(card);
       expect(game.deck).not.toContain(card);
-      game.giveCardBack();
+      game.giveCardBack(card);
       expect(game.deck).toContain(card);
       expect(game.table).not.toContain(card);
     });

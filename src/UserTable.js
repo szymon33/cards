@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
 class UserTable extends Component {
+  setupBgColor(val) {
+    return (val[0] == 'H' || val[0] == 'C') ? 'red' : 'black';
+  }
+
   renderList() {
     let cards = this.props.cards;
     if (cards != undefined && cards.length != 0) {
       return (
         cards.map((card, i) =>
-          <div key={i} className='pure-u-1-12 card'>{card}</div>
+          <div key={i}
+               className={'pure-u-1-12 card  ' + this.setupBgColor(card) }
+               onClick={() => this.props.giveCardBack(card) }>
+            {card}
+          </div>
         )
       );
     } else {
