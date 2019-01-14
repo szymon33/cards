@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
+import Card from './Card';
 
 class UserTable extends Component {
-  setupBgColor(val) {
-    return (val[0] == 'H' || val[0] == 'D') ? 'red' : 'black';
-  }
-
   renderList() {
     let cards = this.props.cards;
     if (cards != undefined && cards.length != 0) {
       return (
-        cards.map((card, i) =>
-          <div className='pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-8'>
-            <div key={card}
-                 className={'card ' + this.setupBgColor(card) }
-                 onClick={() => this.props.giveCardBack(card) }>
-              <div>{card[0]}</div>
-              <div>{card.slice(1, 3)}</div>
-            </div>
+        cards.map((card) =>
+          <div className='pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-8'
+               onClick={() => this.props.giveCardBack(card) }
+               key={card}>
+            <Card value={card} />
           </div>
         )
       );
@@ -26,11 +20,7 @@ class UserTable extends Component {
   }
 
   render() {
-    return (
-      <div className='pure-g'>
-         { this.renderList() }
-      </div>
-    );
+    return (<div className='pure-g'>{ this.renderList() }</div>);
   }
 }
 
