@@ -47,13 +47,20 @@ http://localhost:3000
 **Note:** in order to create an optimized production build you have to run `npm build`
 
 
+## On-line demo
+
+[http://cards-ibm.surge.sh](http://cards-ibm.surge.sh)
+
+**Note:** this is production build.
+
+
 ## Automatic tests
 
 ```
 npm test
 ```
 
-**Note** There is UI in terminal there
+**Note:** there is UI in terminal there
 
 
 ## Continuous Integration
