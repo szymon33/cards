@@ -57,7 +57,8 @@ describe('Game', () => {
     });
 
     it('returns null when deck is already empty', () => {
-      expect(game.takeOneCard).toBeNull;
+      game.deck = [];
+      expect(game.takeOneCard()).toBeNull();
     });
   });
 
@@ -91,8 +92,16 @@ describe('Game', () => {
       expect(game.table).not.toContain(card);
     });
 
-    it('returns null when deck is already empty', () => {
-      expect(game.takeOneCard).toBeNull;
+    it('returns null when table is already empty', () => {
+      game.table = [];
+      expect(game.giveCardBack('La La Land')).toBeNull();
+    });
+
+    it('does not take not existing card from the table', () => {
+      game.takeOneCard();
+      let initTable = game.table;
+      game.giveCardBack('La La Land');
+      expect(game.table).toBe(initTable);
     });
   });
 
@@ -101,6 +110,11 @@ describe('Game', () => {
       expect(game.deck).toEqual(game.orderedDeck);
       game.shuffle();
       expect(game.deck).not.toEqual(game.orderedDeck);
+    });
+
+    it('returns null when deck is empty', () => {
+      game.deck = [];
+      expect(game.shuffle()).toBeNull();
     });
   });
 
@@ -119,17 +133,26 @@ describe('Game', () => {
     });
   });
 
-  it('sortTable', () => {
-    game.shuffle();
-    expect(game.table).toEqual([]);
-    [1, 2 ,3].forEach(() => { game.takeOneCard(); });
-    let table = game.table;
-    expect(table).not.toEqual([]);
-    expect(table.length).toEqual(3);
-    game.sortTable();
-    expect(table.length).toEqual(3);
-    expect(table).not.toEqual(game.table);
+  describe('sortTable', () => {
+    it('sorts', () => {
+      game.shuffle();
+
+      expect(game.table).toEqual([]);
+      [1, 2 ,3].forEach(() => { game.takeOneCard(); });
+
+      let dubTable = game.table.slice();
+
+      game.sortTable();
+
+      expect(dubTable).not.toEqual(game.table);
+    });
+
+    it('returns empty array when table is empty', () => {
+      game.table = [];
+      expect(game.sortTable()).toEqual([]);
+    });
   });
+
 
   it('deckIsOrdered', () => {
     expect(game.deckIsOrdered).toBeTruthy;
