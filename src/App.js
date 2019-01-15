@@ -9,30 +9,37 @@ import UserTable from './UserTable';
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = { game: new Game() };
+
+    this.handleTakeOneCard = this.handleTakeOneCard.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
+    this.handleStartOver = this.handleStartOver.bind(this);
+    this.handleSortTable = this.handleSortTable.bind(this);
+    this.handleGiveCardBack = this.handleGiveCardBack.bind(this);
   }
 
-  takeOneCard() {
+  handleTakeOneCard() {
     this.state.game.takeOneCard();
     this.setState({ game: this.state.game });
   }
 
-  shuffle() {
+  handleShuffle() {
     this.state.game.shuffle();
     this.setState({ game: this.state.game });
   }
 
-  startOver() {
+  handleStartOver() {
     this.state.game.startOver();
     this.setState({ game: this.state.game });
   }
 
-  sortTable() {
+  handleSortTable() {
     this.state.game.sortTable();
     this.setState({ game: this.state.game });
   }
 
-  giveCardBack(card) {
+  handleGiveCardBack(card) {
     this.state.game.giveCardBack(card);
     this.setState({ game: this.state.game });
   }
@@ -47,10 +54,10 @@ class App extends Component {
             </div>
           </div>
           <Menu
-            takeOneCard={ this.takeOneCard.bind(this) }
-            shuffle={ this.shuffle.bind(this) }
-            startOver={ this.startOver.bind(this) }
-            sortTable={ this.sortTable.bind(this) }
+            takeOneCard={ this.handleTakeOneCard }
+            shuffle={ this.handleShuffle }
+            startOver={ this.handleStartOver }
+            sortTable={ this.handleSortTable }
           />
           <Deck
             noOfCards={this.state.game.deck.length }
@@ -58,7 +65,7 @@ class App extends Component {
           />
           <UserTable
             cards={ this.state.game.table }
-            giveCardBack={ this.giveCardBack.bind(this) }
+            giveCardBack={ this.handleGiveCardBack }
           />
         </div>
       </div>
