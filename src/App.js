@@ -20,28 +20,38 @@ class App extends Component {
   }
 
   handleTakeOneCard() {
-    this.state.game.takeOneCard();
-    this.setState({ game: this.state.game });
+    this.setState((state) => {
+      state.game.takeOneCard();
+      return { game: state.game };
+    });
   }
 
   handleShuffle() {
-    this.state.game.shuffle();
-    this.setState({ game: this.state.game });
+    this.setState((state) => {
+      state.game.shuffle();
+      return { game: state.game };
+    });
   }
 
   handleStartOver() {
-    this.state.game.startOver();
-    this.setState({ game: this.state.game });
+    this.setState((state) => {
+      state.game.startOver();
+      return { game: state.game };
+    });
   }
 
   handleSortTable() {
-    this.state.game.sortTable();
-    this.setState({ game: this.state.game });
+    this.setState((state) => {
+      state.game.sortTable();
+      return { game: state.game };
+    });
   }
 
   handleGiveCardBack(card) {
-    this.state.game.giveCardBack(card);
-    this.setState({ game: this.state.game });
+    this.setState((state) => {
+      state.game.giveCardBack(card);
+      return { game: state.game };
+    });
   }
 
   render() {
