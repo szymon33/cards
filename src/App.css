@@ -1,5 +1,9 @@
 /* App */
 
+body, html {
+  background: ghostwhite;
+}
+
 h1 {
   text-align: center;
 }
@@ -41,28 +45,58 @@ aside.deck {
   color: #fff;
 }
 
+/* card component */
+
 .card {
-  text-align: center;
-  height: 6em;
+  position: relative;
+  height: 20em;
   margin: 0.25em;
-  padding-top: 0.5em;
-  font-size: 3em;
-  border: 3px solid darkgray;
-  border-radius: 0.5em;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  background: white;
 }
 
 .card:hover {
   cursor: pointer;
-  opacity: .6;
+  border-color: black;
 }
 
-.card.red {
-  color: red;
+.card.card--red {
+  color: rgb(202, 60, 60);;
 }
 
-.card.black {
-  color: black;
+.card.card--black {
+  color:  rgb(45,45,45);
 }
+
+.card__rank, .card__suit {
+  position: absolute;
+}
+
+.card__rank {
+  font-size: 5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .card__suit {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.card .card__suit--top {
+  top: 5px;
+  left: 10px;
+}
+
+.card .card__suit--bottom {
+  bottom: 5px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
 
 /* UserTable component */
 

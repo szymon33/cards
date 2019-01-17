@@ -10,7 +10,7 @@ Technology stack:
 * Babel
 * Webpack
 * ESLint
-* pure.css (not Bootstrap this time)
+* [pure.css](https://purecss.io/) (not Bootstrap this time)
 
 
 ## Description
@@ -70,16 +70,16 @@ I choose Travis. See the badge at the top of this file.
 
 ## Screenshots and how it works.
 
-### 1. Start the app
+### 1. Start of the app
 
 ![Screentshot3](screenshots/screenshot1.png)
 
-### 2. Shuffle and take 6 cards
+### 2. Shuffle the deck and draw 6 cards
 
 ![Screentshot3](screenshots/screenshot2.png)
 
 **Note** that 45 has cards left int the deck,
 
-### 3. Put 8th of clubs aback and sort user table.
+### 3. Put the ace of dimonds back to the deck and sort user's table.
 
 ![Screentshot3](screenshots/screenshot3.png)

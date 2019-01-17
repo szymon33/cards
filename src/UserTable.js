@@ -15,7 +15,7 @@ class UserTable extends Component {
         )
       );
     } else {
-      return <div className='pure-u-1-1 no-cards-msg'>No card on the table. Take a card or shuffle.</div>
+      return <div className='pure-u-1-1 no-cards-msg'>No card on the table. Draw a card or shuffle the deck.</div>
     }
   }
 

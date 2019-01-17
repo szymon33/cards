@@ -9,10 +9,10 @@ it('renders without crashing', () => {
 });
 
 describe('red card', () => {
-  let card = new Card({ value: 'HQ'}); // queen of hearts
+  let card = new Card({ value: '♥Q'}); // queen of hearts
 
   it('has suit', () => {
-    expect(card.suit).toBe('H');
+    expect(card.suit).toBe('♥');
   });
 
   it('has rank', () => {
@@ -20,6 +20,6 @@ describe('red card', () => {
   });
 
   it('has bgColur red', () => {
-    expect(card.bgColour).toEqual('red');
+    expect(card.bgColour).toEqual('card--red');
   });
 });
