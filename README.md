@@ -65,21 +65,21 @@ npm test
 
 ## Continuous Integration
 
-I choose Travis. See the badge at the top of this file.
+I chose Travis. See the badge at the top of this file.
 
 
 ## Screenshots and how it works.
 
-### 1. Start of the app
+### step 1. Start of the app
 
 ![Screentshot3](screenshots/screenshot1.png)
 
-### 2. Shuffle the deck and draw 6 cards
+### step 2. Shuffle the deck and draw 6 cards
 
 ![Screentshot3](screenshots/screenshot2.png)
 
-**Note** that 45 has cards left int the deck,
+**Note** that 46 has cards left int the deck,
 
-### 3. Put the ace of dimonds back to the deck and sort user's table.
+### step 3. Put the queen of heart back to the deck and sort user's table.
 
 ![Screentshot3](screenshots/screenshot3.png)
