@@ -117,6 +117,12 @@ h1 {
 
 /* UserTable component */
 
-.no-cards-msg {
-  padding-left: 1em;
+.user-table {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.user-table .user-table--no-cards-msg {
+  padding-left: 2em;
+  padding-right: 2em;
 }

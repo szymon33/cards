@@ -20,7 +20,7 @@ class UserTable extends Component {
   }
 
   render() {
-    return (<div className='pure-g'>{ this.renderList() }</div>);
+    return (<div className='user-table pure-g'>{ this.renderList() }</div>);
   }
 }
 
