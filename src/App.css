@@ -4,6 +4,10 @@ body, html {
   background: ghostwhite;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 h1 {
   text-align: center;
 }
@@ -48,6 +52,7 @@ aside.deck {
 /* card component */
 
 .card {
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   height: 20em;
   margin: 0.25em;
