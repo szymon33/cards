@@ -8,10 +8,11 @@ class Deck extends Component {
   render() {
     return (
       <div className='pure-g'>
-        <div className='pure-u-1-1'>
-          <aside className='deck'>
-            <p>{ this.props.noOfCards } cards left in the deck. {this.shuffledInfo()}</p>
-           </aside>
+        <div className='deck pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-8'>
+          <div className='card'>
+            <p className='deck--left'><span>{ this.props.noOfCards }</span> cards <br />left in the deck.</p>
+            <p className='deck--shuffled'>{this.shuffledInfo()}</p>
+           </div>
          </div>
       </div>
     );

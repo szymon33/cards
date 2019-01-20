@@ -42,15 +42,23 @@ h1 {
 
 /* deck compoment */
 
-aside.deck {
-  height: 2em;
+.deck {
+  margin: 2em auto;
+  text-align: center;
+}
 
-  background: #1f8dd6;
-  margin: 0.5em 0;
-  line-height: 2em;
-  padding-left: 1em;
-  border-radius: 3px;
-  color: #fff;
+.deck .card {
+  border-color: black;
+}
+
+.deck .deck--left span {
+  color: rgb(202, 60, 60);
+  line-height: 3em;
+  font-weight: bold;
+}
+
+.deck .deck--left, .deck .deck--shuffled {
+  padding-top: 3em;
 }
 
 /* card component */
