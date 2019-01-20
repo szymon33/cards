@@ -138,13 +138,13 @@ describe('Game', () => {
       game.shuffle();
 
       expect(game.table).toEqual([]);
-      [1, 2 ,3].forEach(() => { game.takeOneCard(); });
+      [1, 2 ,3, 4].forEach(() => { game.takeOneCard(); });
 
-      let dubTable = game.table.slice();
+      let tableDup = game.table.slice();
 
       game.sortTable();
 
-      expect(dubTable).not.toEqual(game.table);
+      expect(game.table).not.toEqual(tableDup);
     });
 
     it('returns empty array when table is empty', () => {

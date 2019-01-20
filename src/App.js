@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Game from './Game';
 import logo from './logo.svg';
 import './App.css';
-import Menu from './Menu';
+import MenuItem from './MenuItem';
 import Deck from './Deck';
 import UserTable from './UserTable';
 
@@ -10,12 +10,40 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { game: new Game() };
+    this.state = {
+      game: new Game(),
+      menuItems: [
+        {
+          id: 1,
+          name: 'Draw card',
+          className: 'take-btn',
+          action: this.handleTakeOneCard.bind(this),
+          active: () => true
+        },
+        {
+          id: 2,
+          name: 'Shuffle',
+          className: 'shuffle-btn',
+          action: this.handleShuffle.bind(this),
+          active: () => true
+        },
+        {
+          id: 3,
+          name: 'Sort table',
+          className: 'sorttable-btn',
+          action: this.handleSortTable.bind(this),
+          active: () => this.state.game.table.length > 1
+        },
+        {
+          id: 4,
+          name: 'Start over',
+          className: 'startover-btn',
+          action: this.handleStartOver.bind(this),
+          active: () => (this.state.game.table.length > 0 || !this.state.game.deckIsOrdered)
+        }
+      ]
+    };
 
-    this.handleTakeOneCard = this.handleTakeOneCard.bind(this);
-    this.handleShuffle = this.handleShuffle.bind(this);
-    this.handleStartOver = this.handleStartOver.bind(this);
-    this.handleSortTable = this.handleSortTable.bind(this);
     this.handleGiveCardBack = this.handleGiveCardBack.bind(this);
   }
 
@@ -63,12 +91,15 @@ class App extends Component {
               <h1>Deck of Cards</h1>
             </div>
           </div>
-          <Menu
-            takeOneCard={ this.handleTakeOneCard }
-            shuffle={ this.handleShuffle }
-            startOver={ this.handleStartOver }
-            sortTable={ this.handleSortTable }
-          />
+          <div className='menu'>
+            <div className='pure-button-group' role='group'>
+              {
+                this.state.menuItems.map((item) =>
+                  <MenuItem key={item.id} data={item} />
+                )
+              }
+            </div>
+          </div>
           <Deck
             noOfCards={this.state.game.deck.length }
             deckIsOrdered={this.state.game.deckIsOrdered }
