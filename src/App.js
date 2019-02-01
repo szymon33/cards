@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Game from './Game';
-import logo from './logo.svg';
 import './App.css';
 import MenuItem from './MenuItem';
 import Deck from './Deck';

@@ -5,12 +5,12 @@
 
 Technology stack:
 
-* React
+* [React](https://reactjs.org)
 * Jest
 * Babel
 * Webpack
-* ESLint
-* [pure.css](https://purecss.io/) (not Bootstrap this time)
+* [ESLint](https://eslint.org/) with recommended react settings
+* [pure.css](https://purecss.io/) (not [Bootstrap](https://getbootstrap.com/) this time)
 
 
 ## Description

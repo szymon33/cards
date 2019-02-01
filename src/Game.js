@@ -25,7 +25,7 @@ class Game {
   }
 
   shuffle() {
-    if (this.deck.length === 0) { return null };
+    if (this.deck.length === 0) { return null }
 
     let ctr = this.deck.length, temp, randomIdx;
 

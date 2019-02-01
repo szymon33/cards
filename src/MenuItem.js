@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class MenuItem extends Component {
   constructor(props) {
@@ -15,5 +16,9 @@ class MenuItem extends Component {
     );
   }
 }
+
+MenuItem.propTypes = {
+  data:  PropTypes.object.isRequired
+};
 
 export default MenuItem;

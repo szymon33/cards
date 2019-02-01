@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Deck extends Component {
   shuffledInfo() {
@@ -18,5 +19,10 @@ class Deck extends Component {
     );
   }
 }
+
+Deck.propTypes = {
+  deckIsOrdered:  PropTypes.bool.isRequired,
+  noOfCards: PropTypes.number.isRequired
+};
 
 export default Deck;

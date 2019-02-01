@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
   constructor(props) {
@@ -18,5 +19,9 @@ class Card extends Component {
     );
   }
 }
+
+Card.propTypes = {
+  value:  PropTypes.string.isRequired
+};
 
 export default Card;

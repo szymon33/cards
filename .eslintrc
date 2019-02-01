@@ -3,7 +3,5 @@
   "plugins": [
     "react"
   ],
-  "rules": {
-    "no-undef": [ 1 ],
-  }
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 class UserTable extends Component {
@@ -23,5 +24,10 @@ class UserTable extends Component {
     return (<div className='user-table pure-g'>{ this.renderList() }</div>);
   }
 }
+
+UserTable.propTypes = {
+  cards:  PropTypes.array.isRequired,
+  giveCardBack:  PropTypes.func.isRequired
+};
 
 export default UserTable;
