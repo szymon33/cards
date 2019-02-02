@@ -4,6 +4,6 @@ import UserTable from './UserTable';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<UserTable />, div);
+  ReactDOM.render(<UserTable cards={ [] } giveCardBack={ () => {} } />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
