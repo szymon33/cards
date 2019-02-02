@@ -1,3 +1,6 @@
+const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
+      suits = ['♠', '♣', '♥', '♦']; // clubs, spades, hearts, diamonds
+
 class Game {
   constructor() {
     this.orderedDeck = this._buildDeck();
@@ -7,7 +10,7 @@ class Game {
   takeOneCard() {
     if (this.deck.length === 0) return null;
 
-    let card = this.deck.pop(1);
+    const card = this.deck.pop(1);
     this.table.push(card);
     return card;
   }
@@ -15,7 +18,7 @@ class Game {
   giveCardBack(card) {
     if (this.table.length === 0) return null;
 
-    let index = this.table.indexOf(card);
+    const index = this.table.indexOf(card);
     if (index > -1) {
       this.table.splice(index, 1);
       this.deck.push(card);
@@ -63,9 +66,7 @@ class Game {
   // private
 
   _buildDeck() {
-    let result = [],
-        ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
-        suits = ['♠', '♣', '♥', '♦']; // clubs, spades, hearts, diamonds
+    let result = [];
 
     suits.forEach(function(suit) {
       ranks.forEach(function(rank){

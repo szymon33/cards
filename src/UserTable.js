@@ -4,7 +4,7 @@ import Card from './Card';
 
 class UserTable extends Component {
   renderList() {
-    let cards = this.props.cards;
+    const cards = this.props.cards;
     if (cards != undefined && cards.length != 0) {
       return (
         cards.map((card) =>

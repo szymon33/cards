@@ -9,7 +9,7 @@ it('renders without crashing', () => {
 });
 
 describe('red card', () => {
-  let card = new Card({ value: '♥Q'}); // queen of hearts
+  const card = new Card({ value: '♥Q'}); // queen of hearts
 
   it('has suit', () => {
     expect(card.suit).toBe('♥');

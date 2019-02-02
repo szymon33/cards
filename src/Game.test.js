@@ -8,13 +8,13 @@ describe('Game', () => {
   });
 
   it('has table array', () => {
-    let table = game.table;
+    const table = game.table;
     expect(table).toBeInstanceOf(Array);
     expect(table).toHaveLength(0);
   });
 
   describe('_buildDeck', () => {
-    let deck = game._buildDeck();
+    const deck = game._buildDeck();
 
     it('is array', () => {
       expect(deck).toBeInstanceOf(Array);
@@ -39,19 +39,19 @@ describe('Game', () => {
     });
 
     it('decreases the deck', () => {
-      let deckInitialSize = game.deck.length;
+      const deckInitialSize = game.deck.length;
       game.takeOneCard();
       expect(game.deck.length).toEqual(deckInitialSize - 1);
     });
 
     it('increases the table', () => {
-      let tableInitialSize = game.table.length;
+      const tableInitialSize = game.table.length;
       game.takeOneCard();
       expect(game.table.length).toEqual(tableInitialSize + 1);
     });
 
     it('the card on the table is not in the deck', () => {
-      let card = game.takeOneCard();
+      const card = game.takeOneCard();
       expect(game.table).toContain(card);
       expect(game.deck).not.toContain(card);
     });
@@ -64,26 +64,26 @@ describe('Game', () => {
 
   describe('giveCardBack', () => {
     it('returns last card', () => {
-      let card = game.takeOneCard();
+      const card = game.takeOneCard();
       expect(game.giveCardBack(card)).toEqual('♦A');
     });
 
     it('increases the deck', () => {
-      let card = game.takeOneCard(),
-          deckInitialSize = game.deck.length;
+      const card = game.takeOneCard(),
+            deckInitialSize = game.deck.length;
       game.giveCardBack(card);
       expect(game.deck.length).toEqual(deckInitialSize + 1);
     });
 
     it('decreases the table', () => {
-      let card = game.takeOneCard(),
-          tableInitialSize = game.table.length;
+      const card = game.takeOneCard(),
+            tableInitialSize = game.table.length;
       game.giveCardBack(card);
       expect(game.table.length).toEqual(tableInitialSize - 1);
     });
 
     it('the card is no longer in the table', () => {
-      let card = game.takeOneCard();
+      const card = game.takeOneCard();
 
       expect(game.table).toContain(card);
       expect(game.deck).not.toContain(card);
@@ -99,7 +99,7 @@ describe('Game', () => {
 
     it('does not take not existing card from the table', () => {
       game.takeOneCard();
-      let initTable = game.table;
+      const initTable = game.table;
       game.giveCardBack('La La Land');
       expect(game.table).toBe(initTable);
     });
@@ -140,7 +140,7 @@ describe('Game', () => {
       expect(game.table).toEqual([]);
       [1, 2 ,3, 4].forEach(() => { game.takeOneCard(); });
 
-      let tableDup = game.table.slice();
+      const tableDup = game.table.slice();
 
       game.sortTable();
 
