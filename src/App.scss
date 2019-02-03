@@ -1,0 +1,141 @@
+$bg-app: ghostwhite;
+$bg-green: rgb(28, 184, 65);
+$bg-orange: rgb(223, 117, 20);
+$bg-light-blue: rgb(66, 184, 221);
+$bg-maroon: rgb(202, 60, 60);
+$bg-white: white;
+
+$font-family: 'Montserrat', sans-serif;
+
+$color-card-red: rgb(202, 60, 60);
+$color-card-black: rgb(45,45,45);
+
+/*********************************
+ *             APP               *
+ *********************************/
+
+body, html {
+  background: $bg-app;
+}
+
+body {
+  font-family: $font-family;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*********************************
+ *        Menu component         *
+ *********************************/
+
+.menu {
+  text-align: center;
+
+  button {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    &.shuffle-btn {
+      background: $bg-green;
+    }
+
+    &.take-btn {
+      background: $bg-orange;
+    }
+
+    &.sorttable-btn {
+      background: $bg-light-blue;
+    }
+
+    &.startover-btn {
+      background: $bg-maroon;
+    }
+  }
+}
+
+/*********************************
+ *        Deck component         *
+ *********************************/
+
+.deck {
+  margin: 2em auto;
+  text-align: center;
+
+  .card { border-color: black; }
+
+  &--left span {
+    color: $color-card-red;
+    line-height: 3em;
+    font-weight: bold;
+  }
+
+  &--left, &--shuffled {
+    padding-top: 3em;
+  }
+}
+
+/*********************************
+ *        Card component         *
+ *********************************/
+
+.card {
+  font-family: $font-family;
+  position: relative;
+  height: 20em;
+  margin: 0.25em;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  background: $bg-white;
+
+  &:hover {
+    cursor: pointer;
+    border-color: black;
+  }
+
+  &--red {
+    color: $color-card-red;
+  }
+
+  &--black {
+    color:  $color-card-black;
+  }
+
+  &__rank, &__suit {
+    position: absolute;
+  }
+
+  &__rank {
+    font-size: 5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__suit {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5em;
+
+    &--top {
+      top: 5px;
+      left: 10px;
+    }
+
+    &--bottom {
+      bottom: 5px;
+      right: 10px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/*********************************
+ *      UserTable component      *
+ *********************************/
+
+.user-table {
+  text-align: center;
+  padding-bottom: 2em;
+}
